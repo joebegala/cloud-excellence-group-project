@@ -1,18 +1,3 @@
-AWSTemplateFormatVersion: 2010-09-09
-Metadata:
-  'AWS::CloudFormation::Designer':
-    cd892867-c3c7-4fcb-84e4-e4e173fd0ff7:
-      size:
-        width: 60
-        height: 60
-      position:
-        x: 326
-        'y': 154
-      z: 0
 Resources:
-  S3B2A1F5:
-    Type: 'AWS::S3::Bucket'
-    Properties: {}
-    Metadata:
-      'AWS::CloudFormation::Designer':
-        id: cd892867-c3c7-4fcb-84e4-e4e173fd0ff7
+  HelloBucketSkarbrevikTestCEProject:
+    Type: AWS::S3::Bucket
