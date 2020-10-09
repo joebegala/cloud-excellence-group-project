@@ -1,4 +1,124 @@
 Resources:
   HelloBucketTest:
     Type: AWS::S3::Bucket
-#this is a test from Joe
+
+#draft instance template using Cloudformation Designer
+AWSTemplateFormatVersion: 2010-09-09
+Metadata:
+  'AWS::CloudFormation::Designer':
+    a158bb5a-f107-4323-b0a9-564e8a23dbc2:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -360
+        'y': 110
+      z: 2
+      parent: 3d51bae7-5a6a-4af0-a9b0-1a73bd9186f0
+      embeds: []
+    6499b3da-f279-4488-81f8-9e2147401eed:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -190
+        'y': -10
+      z: 1
+      parent: 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+      embeds: []
+    66345b15-3672-4401-a502-6fad013a9b95:
+      size:
+        width: 60
+        height: 60
+      position:
+        x: -200
+        'y': 310
+      z: 1
+      parent: 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+      embeds: []
+    1b309713-f2b4-4b06-b24c-112e83bb4e3f:
+      size:
+        width: 680
+        height: 430
+      position:
+        x: -770
+        'y': -30
+      z: 0
+      embeds:
+        - 3d51bae7-5a6a-4af0-a9b0-1a73bd9186f0
+        - fcb099d7-853a-47a8-8eef-3b21611c2e0d
+        - 66345b15-3672-4401-a502-6fad013a9b95
+        - 6499b3da-f279-4488-81f8-9e2147401eed
+    fcb099d7-853a-47a8-8eef-3b21611c2e0d:
+      size:
+        width: 260
+        height: 200
+      position:
+        x: -750
+        'y': 40
+      z: 1
+      parent: 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+      embeds: []
+      iscontainedinside:
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+    3d51bae7-5a6a-4af0-a9b0-1a73bd9186f0:
+      size:
+        width: 240
+        height: 190
+      position:
+        x: -450
+        'y': 50
+      z: 1
+      parent: 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+      embeds:
+        - a158bb5a-f107-4323-b0a9-564e8a23dbc2
+      iscontainedinside:
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+        - 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+Resources:
+  ScraperDatabase:
+    Type: 'AWS::DynamoDB::Table'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: a158bb5a-f107-4323-b0a9-564e8a23dbc2
+  ECScluster:
+    Type: 'AWS::ECS::Cluster'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 6499b3da-f279-4488-81f8-9e2147401eed
+  dashboardLamdaFunction:
+    Type: 'AWS::Lambda::Function'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 66345b15-3672-4401-a502-6fad013a9b95
+  ScraperVPC:
+    Type: 'AWS::EC2::VPC'
+    Properties: {}
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 1b309713-f2b4-4b06-b24c-112e83bb4e3f
+  PublicSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref EC2VPC4NZZH
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: fcb099d7-853a-47a8-8eef-3b21611c2e0d
+  PrivateSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref EC2VPC4NZZH
+    Metadata:
+      'AWS::CloudFormation::Designer':
+        id: 3d51bae7-5a6a-4af0-a9b0-1a73bd9186f0
+        
