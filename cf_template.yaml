@@ -1,3 +1,4 @@
 Resources:
   HelloBucketTest:
     Type: AWS::S3::Bucket
+#this is a test from Joe
